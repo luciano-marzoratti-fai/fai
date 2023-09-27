@@ -37,7 +37,6 @@ Para archivos estaticos como imagenes, videos, etc. usar `public/`.
 
 Comandos que se pueden usar en el projecto:
 
-> **a**
 | Header | Usando NPM | Usando Bun |
 | --- | --- | --- |
 | Instalar dependencias: | npm install | bun install |
