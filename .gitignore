@@ -21,5 +21,9 @@ pnpm-debug.log*
 .DS_Store
 
 # more
-bun.lockb
+*.lockb
+*.lock
 .vscode/*
+.vscode/
+/bun.lockb
+bun.lockb

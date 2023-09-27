@@ -37,13 +37,13 @@ Para archivos estaticos como imagenes, videos, etc. usar `public/`.
 
 Comandos que se pueden usar en el projecto:
 
-| Header | Usando NPM | Usando Bun |
+| Comandos | Usando NPM | Usando BUN |
 | --- | --- | --- |
 | Instalar dependencias: | npm install | bun install |
 | Agregar dependencias: | npm install dependencia | bun add dependencia |
 | Agregar dependencias como desarrollador: | npm install dependencia --save-dev | bun add -d dependencia |
 
-|  | Comandos de Astro | |
+| Comandos de Astro | Usando NPM | Usando BUN |
 | --- | --- | --- |
 | Iniciar servidor(desarrollo): | npm run dev | bun dev |
 | Build del projecto: | npm run build | bun build |
