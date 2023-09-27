@@ -1,10 +1,50 @@
 ---
+import Button from "./button.astro";
+import DarkIcon from '../images/theme.astro'
 ---
 
-<header class="bg-gray-400">
-    <img />
-    <ul class='min-w-full'>
+<header class="bg-cyan-500 bg-opacity-10 h-20 flex border-black border-2 rounded-md mx-1 mt-1">
+    
+    <Button text="&equiv;" size="text-5xl" idButton="menuButton"></Button>
+    <ul class='min-w-full flex'>
         <li class="">hola</li>
-        <li class="text-white">Cambiar modo</li>
+        <Button text="Modo" idButton="themeButton"></Button>
     </ul>
 </header>
+
+<script>
+    import darkIcon from '../images/theme.astro'
+    // menu extendible
+    const menuButton = document.getElementById("menuButton")
+    const sidebar = document.getElementById("menuBar")
+    const sidebarClass = sidebar.classList
+
+    console.log(sidebarClass)
+
+    menuButton.addEventListener('click', () => {
+        if(sidebarClass[7] === "opacity-0"){
+            sidebarClass.replace("h-0", "h-[90.5vh]")
+            sidebarClass.replace("w-0", "w-28")
+            sidebarClass.replace("opacity-0", "opacity-1")
+            sidebarClass.replace("border-0", "border-2")
+        } else {
+            sidebarClass.replace("h-[90.5vh]", "h-0")
+            sidebarClass.replace("w-28", "w-0")
+            sidebarClass.replace("opacity-1", "opacity-0")
+            sidebarClass.replace("border-2", "border-0")
+        }
+    })
+
+    // cambiar tema
+    const themeButton = document.getElementById("themeButton")
+    themeButton.addEventListener('click', () => {
+        if(localStorage.theme === 'dark') {
+            localStorage.theme = 'light'
+            document.documentElement.classList.remove('dark')
+            console.log({darkIcon})
+        } else {
+        localStorage.theme = 'dark'
+        document.documentElement.classList.add('dark')
+        }
+    })
+</script>

@@ -1,0 +1,10 @@
+---
+const { text } = Astro.props
+const { size } = Astro.props
+const { idButton } = Astro.props
+---
+
+<!-- Dark Button -->
+  <div class=`flex border-2 border-gray-800 rounded-lg px-3 py-2 text-gray-800 cursor-pointer hover:bg-gray-800 hover:text-gray-200 self-center m-0.5 z-3 relative ${size}` id=`${idButton}`>
+    {text}
+  </div>

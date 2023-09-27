@@ -1,13 +1,15 @@
 ---
+import MenuButton from "./menuButton.astro";
 ---
 
-<aside class="bg-gray-600 flex content-center justify-center w-28 min-h-screen z-1 absolute">
+<aside class="bg-transparent border-0 border-gray-800 content-center justify-center h-0 w-0 opacity-0 z-1 relative flex m-1 rounded-md transition-opacity duration-300 overflow-hidden" id="menuBar">
   <nav class="min-h-full">
     <ul class="flex flex-col min-h-full items-center justify-center align-middle">
-      <li class="">Hola</li>
-      <li class="">2</li>
-      <li class="">3</li>
-      <li class="">4</li>
+      <MenuButton text="Hola" />
+      <MenuButton text="hola2"/>
+      <MenuButton  text="hola3"/>
+      <MenuButton text="hola4"/>
     </ul>
   </nav>
 </aside>
+

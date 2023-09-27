@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props;
+import CambiarTema from '../components/theme.astro'
 ---
 
 <!doctype html>
@@ -12,8 +13,8 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-gray-700 min-h-screen min-w-screen overflow-hidden">
+	<body class="bg-cyan-50 dark:bg-gray-800 min-h-screen min-w-screen overflow-hidden">
 		<slot />
+		<CambiarTema />
 	</body>
 </html>
-
