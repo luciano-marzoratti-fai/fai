@@ -42,8 +42,9 @@ Comandos que se pueden usar en el projecto:
 | Instalar dependencias: | npm install | bun install |
 | Agregar dependencias: | npm install dependencia | bun add dependencia |
 | Agregar dependencias como desarrollador: | npm install dependencia --save-dev | bun add -d dependencia |
-|  |  |  |
-|  | **Comandos de Astro** | |
+
+|  | Comandos de Astro | |
+| --- | --- | --- |
 | Iniciar servidor(desarrollo): | npm run dev | bun dev |
 | Build del projecto: | npm run build | bun build |
 | Iniciar servidor(build) | npm run preview | bun preview |
