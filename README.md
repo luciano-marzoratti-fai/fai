@@ -40,11 +40,11 @@ Comandos que se pueden usar en el projecto:
 | Header | Usando NPM | Usando Bun |
 | --- | --- | --- |
 | Instalar dependencias: | npm install | bun install |
-| Agregar dependencias: | npm install <dependencia> | bun add <dependencia> |
-| Agregar dependencias como desarrollador: | npm install <dependencia> --save-dev | bun add -d <dependencia> |
-| --- | --- | --- |
-| **Comandos de Astro** |
+| Agregar dependencias: | npm install dependencia | bun add dependencia |
+| Agregar dependencias como desarrollador: | npm install dependencia --save-dev | bun add -d dependencia |
+|  |  |  |
+|  | **Comandos de Astro** | |
 | Iniciar servidor(desarrollo): | npm run dev | bun dev |
 | Build del projecto: | npm run build | bun build |
 | Iniciar servidor(build) | npm run preview | bun preview |
-| Instalar plugins de astro: | npm astro add <plugin> | bun astro add <plugin> |
+| Instalar plugins de astro: | npm astro add plugin | bun astro add plugin |
