@@ -1,37 +1,72 @@
 ---
 import Button from "./button.astro";
-import DarkIcon from '../images/theme.astro'
+import logo from '../../public/logo.webp'
+import dark from '../images/dark.webp'
 ---
 
-<header class="bg-cyan-500 bg-opacity-10 h-20 flex border-black border-2 rounded-md mx-1 mt-1">
+<header class="bg-cyan-500 bg-opacity-10 h-20 flex border-black border-2 rounded-md mx-1 mt-1 shadow-md shadow-gray-500">
     
     <Button text="&equiv;" size="text-5xl" idButton="menuButton"></Button>
-    <ul class='min-w-full flex'>
-        <li class="">hola</li>
-        <Button text="Modo" idButton="themeButton"></Button>
+    <ul class='flex min-w-[94.5%]'>
+        <li class="flex items-center mx-2">
+            <img 
+            src={logo.src}
+            height="60"
+            width="60"
+            />
+        </li>
+        <li class="flex flex-1 items-center mx-2 ml-auto">
+            <!-- Dark Button -->
+  <div class="flex border-2 border-gray-800 rounded-lg text-gray-800 hover:bg-gray-800 dark:hover:bg-gray-200 dark:border-gray-200 cursor-pointer self-center m-0.5 shadow-sm shadow-gray-800 w-[50px] h-[50px] ml-auto" id="themeButton">
+    <img 
+        id="themeImg"
+        src={dark.src}
+        width={dark.width}
+        height={dark.height}
+    />
+  </div>
+        </li>
     </ul>
 </header>
 
 <script>
-    import darkIcon from '../images/theme.astro'
     // menu extendible
     const menuButton = document.getElementById("menuButton")
     const sidebar = document.getElementById("menuBar")
     const sidebarClass = sidebar.classList
 
-    console.log(sidebarClass)
-
     menuButton.addEventListener('click', () => {
         if(sidebarClass[7] === "opacity-0"){
             sidebarClass.replace("h-0", "h-[90.5vh]")
-            sidebarClass.replace("w-0", "w-28")
+            sidebarClass.replace("w-0", "w-[20vw]")
             sidebarClass.replace("opacity-0", "opacity-1")
             sidebarClass.replace("border-0", "border-2")
         } else {
             sidebarClass.replace("h-[90.5vh]", "h-0")
-            sidebarClass.replace("w-28", "w-0")
+            sidebarClass.replace("w-[20vw]", "w-0")
             sidebarClass.replace("opacity-1", "opacity-0")
             sidebarClass.replace("border-2", "border-0")
+        }
+    })
+
+    // cambiar img
+    const themeImg = document.getElementById("themeImg")
+    const themeImgA = themeImg.attributes[1]
+    import dark from '../images/dark.webp'
+    import light from '../images/light.webp'
+
+    themeImg.addEventListener('mouseenter', () => {
+        if(localStorage.theme === 'dark'){
+            themeImgA.value = dark.src
+        } else {
+            themeImgA.value = light.src
+        }
+    })
+    themeImg.addEventListener('mouseleave', () => {
+        if(localStorage.theme === 'dark'){
+            themeImgA.value = light.src
+        } else {
+            themeImgA.value = dark.src
         }
     })
 
@@ -41,10 +76,12 @@ import DarkIcon from '../images/theme.astro'
         if(localStorage.theme === 'dark') {
             localStorage.theme = 'light'
             document.documentElement.classList.remove('dark')
-            console.log({darkIcon})
+            themeImgA.value = dark.src
         } else {
         localStorage.theme = 'dark'
         document.documentElement.classList.add('dark')
+        themeImgA.value = light.src
         }
     })
+    
 </script>

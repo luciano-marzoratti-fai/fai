@@ -1,5 +1,5 @@
-// Comprobar tema elegido por el usuario en local storage
 <script>
+  // Comprobar tema elegido por el usuario en local storage
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark')
   } else {
