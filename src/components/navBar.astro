@@ -37,12 +37,12 @@ import dark from '../images/dark.webp'
 
     menuButton.addEventListener('click', () => {
         if(sidebarClass[7] === "opacity-0"){
-            sidebarClass.replace("h-0", "h-[90.5vh]")
+            sidebarClass.replace("h-0", "h-full")
             sidebarClass.replace("w-0", "w-[20vw]")
             sidebarClass.replace("opacity-0", "opacity-1")
             sidebarClass.replace("border-0", "border-2")
         } else {
-            sidebarClass.replace("h-[90.5vh]", "h-0")
+            sidebarClass.replace("h-full", "h-0")
             sidebarClass.replace("w-[20vw]", "w-0")
             sidebarClass.replace("opacity-1", "opacity-0")
             sidebarClass.replace("border-2", "border-0")
